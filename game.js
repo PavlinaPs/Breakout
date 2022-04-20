@@ -84,7 +84,7 @@ function playGame() {
         x: cvs.width / 2,
         y: paddle.y - ballRadius,
         radius: ballRadius,
-        speed: 1,
+        speed: 4,
         dx: 3 * (Math.random()* 2 - 1), //random number between 3 and -3
         dy: -3
     }
@@ -164,6 +164,9 @@ function playGame() {
                         b.status = false;
                         ball.dy = -ball.dy;
                         score += scoreUnit;
+                        if(ball.x + ball.radius > b.x || ball.x - ball.radius < b.x + brick.width) {
+                            ball.dx = -ball.dx;
+                        }
                     }
                 }
             }
