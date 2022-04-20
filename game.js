@@ -185,14 +185,15 @@ function playGame() {
         drawBall();
         drawBricks()
 
-        // show score
-        showGameStats(score, 35, 25, scoreImg, 5, 5);
+        // // show score
+        // showGameStats(score, 35, 25, scoreImg, 5, 5);
 
-        // show lives
-        showGameStats(life, cvs.width - 25, 25, livesImg, cvs.width - 55, 5);
+        // // show lives
+        // showGameStats(life, cvs.width - 25, 25, livesImg, cvs.width - 55, 5);
 
-        // show level
-        showGameStats(level, cvs.width/2, 25, levelImg, cvs.width/2 - 30, 5);
+        // // show level
+        // showGameStats(level, cvs.width/2, 25, levelImg, cvs.width/2 - 30, 5);
+
     }
     // game over
     function gameOver() {
@@ -215,6 +216,7 @@ function playGame() {
             win.play();
             if(level >= maxLevel) {
                 showYouWin();
+                score = 600;
                 gameOverStatus = true;
                 lockboard = false;
                 return;
@@ -279,6 +281,16 @@ function playGame() {
         ballWallCollision();
         ballPaddleCollision();
         ballBrickCollision();
+
+        // show score
+        showGameStats(score, 35, 25, scoreImg, 5, 5);
+
+        // show lives
+        showGameStats(life, cvs.width - 25, 25, livesImg, cvs.width - 55, 5);
+
+        // show level
+        showGameStats(level, cvs.width/2, 25, levelImg, cvs.width/2 - 30, 5);
+
         gameOver();
         levelUp();
     }
