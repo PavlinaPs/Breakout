@@ -256,9 +256,9 @@ function playGame() {
 
     // ball and paddle collisions
     function ballPaddleCollision(){
-        if(ball.y + ball.radius > paddle.y && ball.y < paddle.y + paddle.height && ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
+        if(ball.y + ball.radius > paddle.y && ball.x + ball.radius > paddle.x && ball.x - ball.radius < paddle.x + paddle.width) {
             paddleHit.play();
-            // why is not accounted for the ball radius???
+            // why is not accounted for the ball radius???  took out && ball.y - ball.radius < paddle.y + paddle.height 
             //check where the ball hit the paddle
             let collidePoint = ball.x - (paddle.x + paddle.width / 2);
             // normalize values
