@@ -103,7 +103,9 @@ function playGame() {
 
     // move ball
     function moveBall() {
-        ball.x += ball.dx;
+        if(ball.x - ball.radius > 0 || ball.x + ball.radius < cvs.width) {
+            ball.x += ball.dx;
+        }
         ball.y += ball.dy;
     }
 
@@ -164,8 +166,11 @@ function playGame() {
                         b.status = false;
                         ball.dy = -ball.dy;
                         score += scoreUnit;
-                        if(ball.x + ball.radius > b.x || ball.x - ball.radius < b.x + brick.width) {
-                            ball.dx = -ball.dx;
+                        // if(ball.x + ball.radius > b.x || ball.x - ball.radius < b.x + brick.width) {
+                        //     ball.dx = -ball.dx;
+                        //}
+                        if(ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brick.width) {
+                            ball.dy = ball.dy;
                         }
                     }
                 }
@@ -318,7 +323,7 @@ function playGame() {
     function audioManager() {
         //change image sound on/off
         let imgSrc = soundElement.getAttribute('src');
-        let soundImg = imgSrc == "./images/SOUND_ON.png" ? "./images/SOUND_OFF.png" : "./images/SOUND_ON.png";
+        let soundImg = imgSrc == "./images/sound-on.svg" ? "./images/sound-off.svg" : "./images/sound-on.svg";
 
         soundElement.setAttribute('src', soundImg);
 

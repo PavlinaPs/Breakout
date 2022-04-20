@@ -3,13 +3,13 @@ const bgImage = new Image();
 bgImage.src = "./images/jakob-braun-NpeFMd8FseU-unsplash-background.jpg";
 
 const scoreImg = new Image();
-scoreImg.src = "./images/score.png";
+scoreImg.src = "./images/score.svg";
 
 const livesImg = new Image()
-livesImg.src = "./images/life.png";
+livesImg.src = "./images/lives.svg";
 
 const levelImg = new Image();
-levelImg.src = "./images/level.png";
+levelImg.src = "./images/levels.svg";
 
 // load sounds
 const wallSound = new Audio();

@@ -20,6 +20,10 @@
     display: none;
 }
 
+#gameover > img {
+    transform: scale(0.8);
+}
+
 #youwon {
     position: absolute;
     top: 200px;
