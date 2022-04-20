@@ -84,7 +84,7 @@ function playGame() {
         x: cvs.width / 2,
         y: paddle.y - ballRadius,
         radius: ballRadius,
-        speed: 4,
+        speed: 1,
         dx: 3 * (Math.random()* 2 - 1), //random number between 3 and -3
         dy: -3
     }
@@ -167,7 +167,7 @@ function playGame() {
                     }
                 }
             }
-        }
+        } 
     }
 
     // show game stats
@@ -256,7 +256,7 @@ function playGame() {
 
     // ball and paddle collisions
     function ballPaddleCollision(){
-        if(ball.y > paddle.y && ball.y < paddle.y + paddle.height && ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
+        if(ball.y + ball.radius > paddle.y && ball.y < paddle.y + paddle.height && ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
             paddleHit.play();
             // why is not accounted for the ball radius???
             //check where the ball hit the paddle
