@@ -168,10 +168,10 @@ function playGame() {
                         score += scoreUnit;
                         // if(ball.x + ball.radius > b.x || ball.x - ball.radius < b.x + brick.width) {
                         //     ball.dx = -ball.dx;
+                        // }
+                        // if(ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brick.width) {
+                        //     ball.dy = ball.dy;
                         //}
-                        if(ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brick.width) {
-                            ball.dy = ball.dy;
-                        }
                     }
                 }
             }
@@ -181,7 +181,7 @@ function playGame() {
     // show game stats
     function showGameStats(text, textX, textY, img, imgX, imgY) {
         ctx.fillStyle = "#FFF";
-        ctx.font = "25px Arial";
+        ctx.font = "16px 'Press Start 2P'";
         ctx.fillText(text, textX, textY);
 
         ctx.drawImage( img, imgX, imgY, width = 25, height = 25);
@@ -343,7 +343,7 @@ function playGame() {
 
     // show you win
     function showYouWin() {
-        gameover.style.display = "block";
+        //gameover.style.display = "block";
         youwon.style.display = "block";
     }
 

@@ -1,12 +1,22 @@
-/* #breakout {
-    margin: 3rem;
-    outline: 2px solid black;
-} */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+    margin: 1rem auto;
+}
 
 #sound {
     position: absolute;
-    top: 480px;
-    left: 9px;
+    top: 20px;
+    right: 9px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -14,6 +24,7 @@
 
 #gameover {
     position: absolute;
+    top: 68px;
     width: 400px;
     height: 500px;
     background: rgba(0,0,0,0.5);
@@ -26,9 +37,9 @@
 
 #youwon {
     position: absolute;
-    top: 200px;
-    left: 150px;
-    width: 100px;
+    top: 70px;
+    left: 100px;
+    height: 400px;
     display: none;
 }
 
@@ -45,8 +56,19 @@
     top: 310px;
     left: 155;
     width: 100%; */
+    font-family: inherit;
     cursor: pointer;
     font-size: 1.25em;
     color: black;
     text-align: center;
+    margin: 9px 16px 16px 0;
+    padding: 0.5rem 1rem;
+    background-color: #ff4500;
+    border: 3px solid white;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.2));
+    border-radius: 5px;
+}
+
+.intro {
+    display: flex;
 }
