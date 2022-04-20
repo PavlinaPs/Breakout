@@ -15,24 +15,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main class="breakout">
+        <div class="intro">
+            <button id="restart">Play</button>
+            <h1>BREAKOUT</h1>
+        </div>
 
-    <div class="intro">
-        <button id="restart">Play</button>
-        <h1>BREAKOUT</h1>
-    </div>
+        <div class="game">
+            <div class="sound">
+                <img src="./images/sound-on.svg" alt="" id="sound">
+            </div>
 
+            <div id="gameover">
+                <img src="./images/youwin1.png" alt="" id="youwon">
+                <img src="./images/gameover.svg" alt="" id="youlose">
+            </div>
 
-    <div class="sound">
-        <img src="./images/sound-on.svg" alt="" id="sound">
-    </div>
-
-    <div id="gameover">
-        <img src="./images/youwin1.png" alt="" id="youwon">
-        <img src="./images/gameover.svg" alt="" id="youlose">
-        <!-- <div id="restart">Play Again</div> -->
-    </div>
-
-    <canvas id="breakout" width="400" height="500"></canvas>
+            <canvas id="breakout" width="400" height="500"></canvas>
+        </div>
+    </main>
 
     <script src="components.js"></script>
     <script src="game.js"></script>

@@ -1,12 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+    min-height: 100vh;
+
     font-family: 'Press Start 2P', cursive;
+    background-color: lightgray;
+}
+
+.intro {
+    display: flex;
 }
 
 h1 {
@@ -15,31 +26,39 @@ h1 {
 
 #sound {
     position: absolute;
-    top: 20px;
-    right: 9px;
+    bottom: 11px;
+    right: 11px;
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
 
+.game {
+    position: relative;
+    width: 402px;
+    height: 502px;
+    background-image: url(./images/canvas-background.jpg);
+    background-position: center;
+}
+
 #gameover {
     position: absolute;
-    top: 68px;
-    width: 400px;
-    height: 500px;
+    top: 0;
+    left: 0;
+    width: 402px;
+    height: 502px;
     background: rgba(0,0,0,0.5);
     display: none;
 }
 
-#gameover > img {
-    transform: scale(0.8);
-}
 
 #youwon {
     position: absolute;
-    top: 70px;
-    left: 100px;
-    height: 400px;
+    top: 100px;
+    left: 75px;
+    width: 250px;
+    height: 300px;
+    z-index: 100;
     display: none;
 }
 
@@ -49,6 +68,7 @@ h1 {
     left: 0;
     width: 400px;
     display: none;
+    transform: scale(0.8);
 }
 
 #restart {
@@ -67,8 +87,4 @@ h1 {
     border: 3px solid white;
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.2));
     border-radius: 5px;
-}
-
-.intro {
-    display: flex;
 }

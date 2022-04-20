@@ -161,17 +161,21 @@ function playGame() {
             for(let c = 0; c < brick.column; c++) {
                 let b = bricks[r][c];
                 if(b.status) {
-                    if(ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brick.width && ball.y - ball.radius < b.y + brick.height && ball.y + ball.radius > b.y ) {
+                    if(ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brick.width && ball.y - ball.radius < b.y + brick.height && ball.y + ball.radius > b.y) {
                         brickHit.play();
                         b.status = false;
-                        ball.dy = -ball.dy;
                         score += scoreUnit;
-                        // if(ball.x + ball.radius > b.x || ball.x - ball.radius < b.x + brick.width) {
+                        ball.dy = -ball.dy;
+
+                        // if(ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brick.width) {
+                        //     ball.dx = -ball.dx;
+                        // } 
+                        // if(ball.y - ball.radius < b.y + brick.height && ball.y + ball.radius > b.y) {
+                        //     ball.dy = -ball.dy;
                         //     ball.dx = -ball.dx;
                         // }
-                        // if(ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brick.width) {
-                        //     ball.dy = ball.dy;
-                        //}
+                        
+                        
                     }
                 }
             }
@@ -264,10 +268,9 @@ function playGame() {
 
     // ball and paddle collisions
     function ballPaddleCollision(){
-        if(ball.y + ball.radius > paddle.y && ball.x + ball.radius > paddle.x && ball.x - ball.radius < paddle.x + paddle.width) {
+        if(ball.y + ball.radius > paddle.y && ball.y - ball.radius < paddle.y + paddle.height && ball.x + ball.radius > paddle.x && ball.x - ball.radius < paddle.x + paddle.width) {
             paddleHit.play();
-            // why is not accounted for the ball radius???  took out && ball.y - ball.radius < paddle.y + paddle.height 
-            //check where the ball hit the paddle
+             //check where the ball hit the paddle
             let collidePoint = ball.x - (paddle.x + paddle.width / 2);
             // normalize values
             collidePoint = collidePoint / (paddle.width/2);
@@ -343,7 +346,7 @@ function playGame() {
 
     // show you win
     function showYouWin() {
-        //gameover.style.display = "block";
+        gameover.style.display = "block";
         youwon.style.display = "block";
     }
 
